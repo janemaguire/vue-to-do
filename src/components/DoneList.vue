@@ -1,14 +1,18 @@
 <template>
-  <div class="home">
+  <div>
     <h1>Done</h1>
-
+    <ul>
+      <li v-for="item in list">{{item}}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'DoneList',
-
+  props: {
+    list: Array
+  }
 }
 </script>
 
