@@ -2,8 +2,10 @@
   <div>
     <h1>To Do</h1>
     <ul>
-      <li v-for="item in itemsToDo">{{item}}</li>
+      <li v-for="item in toDoItems">{{item}}</li>
     </ul>
+    <input type="text" placeholder="Add an item">
+    <button type="button" name="button">Add</button>
   </div>
 </template>
 
@@ -11,8 +13,8 @@
 export default {
   name: 'ToDoList',
   computed: {
-    itemsToDo() {
-      return this.$store.state.toDoListItems;
+    toDoItems() {
+      return this.$store.getters.toDoItems;
     }
   }
 }

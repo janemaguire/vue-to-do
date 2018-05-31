@@ -5,9 +5,48 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    toDoListItems: ['Get up', 'Look sickening', 'Make them eat it'],
-    doneListItems: ['Fall down', 'Make mistakes']
-
+    listItems: [{
+        task: 'Fall down',
+        completed: true
+      },
+      {
+        task: 'Make mistakes',
+        completed: true
+      },
+      {
+        task: 'Get up',
+        complete: false
+      },
+      {
+        task: 'Look sickening',
+        complete: false
+      },
+      {
+        task: 'Make them eat it',
+        complete: false
+      }
+    ]
+  },
+  getters: {
+    doneItems: state => {
+      let list = [];
+      for (let i=0; i<state.listItems.length; i++) {
+        if (state.listItems[i].completed) {
+          list.push(state.listItems[i].task);
+        }
+      }
+      return list;
+    },
+    toDoItems: state => {
+      let list = [];
+      for (let i=0; i<state.listItems.length; i++) {
+        if (!state.listItems[i].completed) {
+          console.log(state.listItems[i].task);
+          list.push(state.listItems[i].task);
+        }
+      }
+      return list;
+    }
   },
   mutations: {
 
