@@ -2,10 +2,12 @@
   <div>
     <h1>To Do</h1>
     <ul>
-      <li v-for="item in toDoItems">{{item}}</li>
+      <li v-for="item in toDoItems">
+        {{item}}
+      </li>
     </ul>
     <input type="text" placeholder="Add an item">
-    <button type="button" name="button">Add</button>
+    <button @click="markAllDone" type="button" name="button">Mark all as done</button>
   </div>
 </template>
 
@@ -15,6 +17,13 @@ export default {
   computed: {
     toDoItems() {
       return this.$store.getters.toDoItems;
+    }
+  },
+  methods: {
+    markAllDone() {
+      for (let i=0; i<this.$store.state.listItems.length; i++) {
+        console.log(this.$store.state.listItems[i].complete);
+      }
     }
   }
 }
