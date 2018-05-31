@@ -2,7 +2,7 @@
   <div>
     <h1>To Do</h1>
     <ul>
-      <li v-for="item in list">{{item}}</li>
+      <li v-for="item in itemsToDo">{{item}}</li>
     </ul>
   </div>
 </template>
@@ -10,8 +10,10 @@
 <script>
 export default {
   name: 'ToDoList',
-  props: {
-    list: Array
+  computed: {
+    itemsToDo() {
+      return this.$store.state.toDoListItems;
+    }
   }
 }
 </script>

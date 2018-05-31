@@ -2,7 +2,7 @@
   <div>
     <h1>Done</h1>
     <ul>
-      <li v-for="item in list">{{item}}</li>
+      <li v-for="item in itemsDone">{{item}}</li>
     </ul>
   </div>
 </template>
@@ -10,8 +10,10 @@
 <script>
 export default {
   name: 'DoneList',
-  props: {
-    list: Array
+  computed: {
+    itemsDone () {
+      return this.$store.state.doneListItems;
+    }
   }
 }
 </script>
