@@ -16,6 +16,11 @@
 <script>
 export default {
   name: 'ToDoList',
+  date () {
+    return {
+      newItem: ''
+    }
+  },
   computed: {
     toDoItems() {
       return this.$store.getters.toDoItems;
@@ -30,6 +35,7 @@ export default {
     },
     addNew(newItem) {
       this.$store.commit('addNew', newItem);
+      this.newItem = '';
     }
   }
 }
