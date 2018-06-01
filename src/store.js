@@ -7,23 +7,28 @@ export default new Vuex.Store({
   state: {
     listItems: [{
         task: 'Fall down',
-        complete: true
+        complete: true,
+        id: 0
       },
       {
         task: 'Make mistakes',
-        complete: true
+        complete: true,
+        id: 1
       },
       {
         task: 'Get up',
-        complete: false
+        complete: false,
+        id: 2
       },
       {
         task: 'Look sickening',
-        complete: false
+        complete: false,
+        id: 3
       },
       {
         task: 'Make them eat it',
-        complete: false
+        complete: false,
+        id: 4
       }
     ]
   },
@@ -41,7 +46,7 @@ export default new Vuex.Store({
       let list = [];
       for (let i=0; i<state.listItems.length; i++) {
         if (!state.listItems[i].complete) {
-          list.push(state.listItems[i].task);
+          list.push(state.listItems[i]);
         }
       }
       return list;
@@ -51,8 +56,10 @@ export default new Vuex.Store({
     markAllDone(state) {
       for (let i=0; i<state.listItems.length; i++) {
         state.listItems[i].complete = true;
-        console.log('mutation worked', state.listItems[i].complete);
       }
+    },
+    markDone(state, item) {
+      item.complete = true;
     }
   },
   actions: {

@@ -3,7 +3,8 @@
     <h1>To Do</h1>
     <ul>
       <li v-for="item in toDoItems">
-        {{item}}
+        {{item.task}}
+        <button @click="markDone(item)" type="button" name="button">Mark as done</button>
       </li>
     </ul>
     <input type="text" placeholder="Add an item">
@@ -22,6 +23,9 @@ export default {
   methods: {
     markAllDone() {
       this.$store.commit('markAllDone');
+    },
+    markDone(item) {
+      this.$store.commit('markDone', item);
     }
   }
 }
