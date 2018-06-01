@@ -7,7 +7,8 @@
         <button @click="markDone(item)" type="button" name="button">Mark as done</button>
       </li>
     </ul>
-    <input type="text" placeholder="Add an item">
+    <input v-model="newItem" type="text" placeholder="Add an item">
+    <button @click="addNew(newItem)" type="button" name="button">Add new</button>
     <button @click="markAllDone" type="button" name="button">Mark all as done</button>
   </div>
 </template>
@@ -26,6 +27,9 @@ export default {
     },
     markDone(item) {
       this.$store.commit('markDone', item);
+    },
+    addNew(newItem) {
+      this.$store.commit('addNew', newItem);
     }
   }
 }

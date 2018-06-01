@@ -60,6 +60,15 @@ export default new Vuex.Store({
     },
     markDone(state, item) {
       item.complete = true;
+    },
+    addNew(state, newItem) {
+      state.listItems.push(
+        {
+          task: newItem,
+          complete: false,
+          id: state.listItems.length
+        }
+      )
     }
   },
   actions: {
