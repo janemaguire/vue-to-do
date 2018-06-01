@@ -69,7 +69,10 @@ export default new Vuex.Store({
           id: state.listItems.length
         }
       )
-    }
+    },
+    deleteItem(state, item) {
+      state.listItems.splice(item.id, 1);
+    },
   },
   actions: {
 
