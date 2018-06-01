@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'ToDoList',
-  date () {
+  data () {
     return {
       newItem: ''
     }
