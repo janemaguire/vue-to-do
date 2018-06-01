@@ -21,9 +21,7 @@ export default {
   },
   methods: {
     markAllDone() {
-      for (let i=0; i<this.$store.state.listItems.length; i++) {
-        console.log(this.$store.state.listItems[i].complete);
-      }
+      this.$store.commit('markAllDone');
     }
   }
 }
