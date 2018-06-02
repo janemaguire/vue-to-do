@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list">
     <h1>To Do</h1>
     <ul>
       <li v-for="item in toDoItems">
@@ -7,9 +7,13 @@
         <button @click="markDone(item)" type="button" name="button">Mark as done</button>
       </li>
     </ul>
-    <input v-model="newItem" type="text" placeholder="Add an item">
-    <button @click="addNew(newItem)" type="button" name="button">Add new</button>
-    <button @click="markAllDone" type="button" name="button">Mark all as done</button>
+    <div class="mark-all">
+      <button @click="markAllDone" type="button" name="button">Mark all as done</button>
+    </div>
+    <div class="add-new">
+      <input v-model="newItem" type="text" placeholder="Add an item">
+      <button @click="addNew(newItem)" type="button" name="button">Add new</button>
+    </div>
   </div>
 </template>
 
@@ -41,7 +45,17 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.mark-all {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2vh;
+}
+
+.add-new {
+  display: flex;
+  justify-content: space-between;
+}
 
 </style>

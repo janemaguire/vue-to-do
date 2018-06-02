@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list">
     <h1>Done</h1>
     <ul>
       <li v-for="item in doneItems">
@@ -26,7 +26,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>
