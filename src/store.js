@@ -34,29 +34,15 @@ export default new Vuex.Store({
   },
   getters: {
     doneItems: state => {
-      let list = [];
-      for (let i=0; i<state.listItems.length; i++) {
-        if (state.listItems[i].complete) {
-          list.push(state.listItems[i].task);
-        }
-      }
-      return list;
+      return state.listItems.filter(item => item.complete);
     },
     toDoItems: state => {
-      let list = [];
-      for (let i=0; i<state.listItems.length; i++) {
-        if (!state.listItems[i].complete) {
-          list.push(state.listItems[i]);
-        }
-      }
-      return list;
+      return state.listItems.filter(item => !item.complete);
     }
   },
   mutations: {
     markAllDone(state) {
-      for (let i=0; i<state.listItems.length; i++) {
-        state.listItems[i].complete = true;
-      }
+      return state.listItems.map(item => item.complete = true);
     },
     markDone(state, item) {
       item.complete = true;
