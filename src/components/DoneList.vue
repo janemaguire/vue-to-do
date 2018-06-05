@@ -4,7 +4,7 @@
     <ul>
       <li v-for="item in doneItems">
         {{item.task}}
-        <button @click="deleteItem" type="button" name="button">x</button>
+        <button @click="deleteItem" type="button" name="button">Delete</button>
       </li>
     </ul>
   </div>
