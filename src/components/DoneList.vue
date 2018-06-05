@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     deleteItem(item) {
+      // Committing a mutation
       this.$store.commit('deleteItem', item);
     }
   }

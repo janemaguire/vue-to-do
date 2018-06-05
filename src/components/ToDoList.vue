@@ -32,13 +32,16 @@ export default {
   },
   methods: {
     markAllDone() {
+      // Committing a mutation
       this.$store.commit('markAllDone');
     },
     markDone(item) {
+      // Committing a mutation
       this.$store.commit('markDone', item);
     },
     addNew(newItem) {
       if (newItem) {
+        // Committing a mutation
         this.$store.commit('addNew', newItem);
         this.newItem = '';
       }

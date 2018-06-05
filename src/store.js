@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  // Initial state
   state: {
     listItems: [{
         task: 'Fall down',
@@ -32,6 +33,7 @@ export default new Vuex.Store({
       }
     ]
   },
+  // Getters: computed properties for stores, available in all children
   getters: {
     doneItems: state => {
       return state.listItems.filter(item => item.complete);
@@ -40,6 +42,7 @@ export default new Vuex.Store({
       return state.listItems.filter(item => !item.complete);
     }
   },
+  // Mutations: change state in a store by committing a mutation
   mutations: {
     markAllDone(state) {
       return state.listItems.map(item => item.complete = true);
