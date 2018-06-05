@@ -38,8 +38,10 @@ export default {
       this.$store.commit('markDone', item);
     },
     addNew(newItem) {
-      this.$store.commit('addNew', newItem);
-      this.newItem = '';
+      if (newItem) {
+        this.$store.commit('addNew', newItem);
+        this.newItem = '';
+      }
     }
   }
 }
