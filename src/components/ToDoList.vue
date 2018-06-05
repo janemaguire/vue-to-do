@@ -8,7 +8,7 @@
       </li>
     </ul>
     <div class="mark-all">
-      <button @click="markAllDone" type="button" name="button">Mark all as done</button>
+      <button v-if="toDoItems.length > 1" @click="markAllDone" type="button" name="button">Mark all as done</button>
     </div>
     <div class="add-new">
       <input v-model="newItem" type="text" placeholder="Add an item">
