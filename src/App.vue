@@ -31,7 +31,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('assets/glitter.jpeg');
+    background-image: url('assets/bg.png');
     font-family: 'Special Elite', cursive;
     color: mediumvioletred;
 }
