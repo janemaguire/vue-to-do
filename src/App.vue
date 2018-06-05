@@ -32,6 +32,8 @@ export default {
     flex-direction: column;
     align-items: center;
     background-image: url('assets/glitter.jpeg');
+    font-family: 'Special Elite', cursive;
+    color: mediumvioletred;
 }
 
 .title {
@@ -44,7 +46,6 @@ export default {
 }
 
 .container {
-    font-family: 'Homemade Apple', cursive;
     font-size: 1.5rem;
     width: 80%;
     display: flex;
@@ -60,7 +61,6 @@ export default {
     flex-direction: column;
     justify-content: flex-start;
     background-color: white;
-    color: mediumvioletred;
     margin: 5vh;
     padding: 0 5vh 5vh 5vh;
     border: 1vw solid;
@@ -70,7 +70,6 @@ export default {
 h1 {
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Special Elite', cursive;
     font-size: 2.5rem;
     margin: 2rem;
     padding-top: 0.5rem;
@@ -83,23 +82,32 @@ button {
   background-color: mediumvioletred;
   color: white;
   border: none;
-  font-family: 'Special Elite', cursive;
   font-size: 1.2rem;
+  font-family: 'Special Elite', cursive;
+}
+
+button:hover {
+  background-color: deeppink;
 }
 
 input {
   padding: 0.5rem 5rem 0.5rem 0.5rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
-  color: mediumvioletred;
   border: solid 1px mediumvioletred;
   outline: none;
+  color: mediumvioletred;
   font-family: 'Special Elite', cursive;
   font-size: 1rem;
 }
 
 input::placeholder {
   color: mediumvioletred;
+}
+
+input:focus {
+  background-color: lavenderblush;
+  border: solid 2px mediumvioletred;
 }
 
 ul {
@@ -112,6 +120,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Homemade Apple', cursive;
 }
 
 </style>
