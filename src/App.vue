@@ -31,7 +31,6 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('assets/bg.png');
     font-family: 'Special Elite', cursive;
     color: mediumvioletred;
 }
@@ -41,7 +40,6 @@ export default {
   color: white;
   margin: 5vh;
   padding: 1vh 5vh;
-  border: 1vw solid;
   border-radius: 5vw;
 }
 
@@ -55,7 +53,7 @@ export default {
 }
 
 .list {
-    width: 40%;
+    width: 50%;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -91,7 +89,7 @@ button:hover {
 }
 
 input {
-  padding: 0.5rem 5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   border: solid 1px mediumvioletred;
@@ -99,6 +97,7 @@ input {
   color: mediumvioletred;
   font-family: 'Special Elite', cursive;
   font-size: 1rem;
+  width: 60%;
 }
 
 input::placeholder {

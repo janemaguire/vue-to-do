@@ -62,6 +62,14 @@ export default new Vuex.Store({
     deleteItem(state, item) {
       state.listItems.splice(item.id, 1);
     },
+    // deleteAll(state) {
+    //   for (let i=0; i<state.listItems.length; i++) {
+    //     if (state.listItems[i].complete == true) {
+    //       console.log('false')
+    //       state.listItems.splice(i.id, 1);
+    //     }
+    //   }
+    // },
   },
   actions: {
 
