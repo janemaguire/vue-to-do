@@ -14,6 +14,7 @@
       <input v-model="newItem" type="text" placeholder="Add an item">
       <button @click="addNew(newItem)" type="button" name="button">Add new</button>
     </div>
+    <button @click="fetchList" type="button" name="button">Fetch list</button>
   </div>
 </template>
 
@@ -45,6 +46,9 @@ export default {
         this.$store.commit('addNew', newItem);
         this.newItem = '';
       }
+    },
+    fetchList() {
+      this.$store.dispatch('fetchList');
     }
   }
 }

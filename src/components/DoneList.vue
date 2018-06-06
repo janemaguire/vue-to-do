@@ -7,9 +7,6 @@
         <button @click="deleteItem" type="button" name="button">Delete</button>
       </li>
     </ul>
-    <div class="delete-all">
-      <!-- <button v-if="doneItems.length > 1" @click="deleteAll" type="button" name="button">Delete all</button> -->
-    </div>
   </div>
 </template>
 
@@ -35,8 +32,5 @@ export default {
 </script>
 
 <style scoped>
-.delete-all {
-  display: flex;
-  justify-content: flex-end;
-}
+
 </style>

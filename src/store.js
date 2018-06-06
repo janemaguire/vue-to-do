@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -51,27 +52,28 @@ export default new Vuex.Store({
       item.complete = true;
     },
     addNew(state, newItem) {
-      state.listItems.push(
-        {
-          task: newItem,
-          complete: false,
-          id: state.listItems.length
-        }
-      )
+      state.listItems.push({
+        task: newItem,
+        complete: false,
+        id: state.listItems.length
+      })
     },
     deleteItem(state, item) {
       state.listItems.splice(item.id, 1);
-    },
-    // deleteAll(state) {
-    //   for (let i=0; i<state.listItems.length; i++) {
-    //     if (state.listItems[i].complete == true) {
-    //       console.log('false')
-    //       state.listItems.splice(i.id, 1);
-    //     }
-    //   }
-    // },
+    }
   },
   actions: {
+    fetchList({commit}) {
+      axios.get('https://jsonplaceholder.typicode.com/todos')
+        .then(function(response) {
+          response.data.slice(0, 10).forEach(function(item) {
+            commit('addNew', item.title)
+          });
 
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
   }
 })
