@@ -19,6 +19,12 @@ export default {
   components: {
     ToDoList,
     DoneList
+  },
+  methods: {
+
+  },
+  created() {
+    this.$store.dispatch('fetchList')
   }
 }
 </script>
