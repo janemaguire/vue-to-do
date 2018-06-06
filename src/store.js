@@ -19,17 +19,17 @@ export default new Vuex.Store({
       },
       {
         task: 'Get up',
-        complete: false,
+        complete: true,
         id: 2
       },
       {
         task: 'Look sickening',
-        complete: false,
+        complete: true,
         id: 3
       },
       {
         task: 'Make them eat it',
-        complete: false,
+        complete: true,
         id: 4
       }
     ]

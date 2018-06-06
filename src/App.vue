@@ -60,7 +60,6 @@ export default {
 
 .list {
     width: 50%;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -69,6 +68,10 @@ export default {
     padding: 0 5vh 5vh 5vh;
     border: 1vw solid;
     border-radius: 5vw;
+}
+
+.list p {
+  max-width: 65%;
 }
 
 h1 {
@@ -83,6 +86,7 @@ button {
   padding: 0.5rem;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
+
   background-color: mediumvioletred;
   color: white;
   border: none;

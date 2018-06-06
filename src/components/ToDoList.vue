@@ -3,7 +3,7 @@
     <h1>To Do</h1>
     <ul>
       <li v-for="item in toDoItems">
-        {{item.task}}
+        <p>{{item.task}}</p>
         <button @click="markDone(item)" type="button" name="button">Mark as done</button>
       </li>
     </ul>
@@ -14,7 +14,6 @@
       <input v-model="newItem" type="text" placeholder="Add an item">
       <button @click="addNew(newItem)" type="button" name="button">Add new</button>
     </div>
-    <button @click="fetchList" type="button" name="button">Fetch list</button>
   </div>
 </template>
 
